@@ -1,0 +1,172 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "line": 4,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 1548000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I set REST API url",
+            "match": {
+              "location": "com.SkyProject.step_definitions.SkyStepDefinitions.i_set_REST_API_url()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-12-18T13:48:46.910Z",
+        "before": [
+          {
+            "result": {
+              "duration": 458447000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.SkyProject.step_definitions.Hooks.setUp()"
+            }
+          }
+        ],
+        "line": 8,
+        "name": "get single article",
+        "description": "",
+        "id": "single-article-endpoint-test;get-single-article",
+        "after": [
+          {
+            "result": {
+              "duration": 22000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.SkyProject.step_definitions.Hooks.endAPISession()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1279387000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I send the request with \"GET\" to \"single_article_endpoint\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"GET\"",
+                  "offset": 24
+                },
+                {
+                  "val": "\"single_article_endpoint\"",
+                  "offset": 33
+                }
+              ],
+              "location": "com.SkyProject.step_definitions.SkyStepDefinitions.i_send_the_request_with_to(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 138926000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "I get the single article",
+            "match": {
+              "location": "com.SkyProject.step_definitions.SkyStepDefinitions.i_get_the_single_article()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2032000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "status code should be \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"200\"",
+                  "offset": 22
+                }
+              ],
+              "location": "com.SkyProject.step_definitions.SkyStepDefinitions.statusCodeShouldBe(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 609000,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "content type should be \"application/json\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"application/json\"",
+                  "offset": 23
+                }
+              ],
+              "location": "com.SkyProject.step_definitions.SkyStepDefinitions.contentTypeShouldBe(java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 469000,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "article \"single\" shouldn\u0027t be empty",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"single\"",
+                  "offset": 8
+                }
+              ],
+              "location": "com.SkyProject.step_definitions.SkyStepDefinitions.articleShouldnTBeEmpty(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@singlearticle"
+          },
+          {
+            "name": "@positive"
+          }
+        ]
+      }
+    ],
+    "name": "Single Article Endpoint Test",
+    "description": "",
+    "id": "single-article-endpoint-test",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/SingleArticleAPI.feature",
+    "tags": [
+      {
+        "name": "@singlearticle",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
+  }
+]
