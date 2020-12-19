@@ -12,9 +12,7 @@ public class SkyStepDefinitions {
 
     @Given("I set REST API url")
     public void i_set_REST_API_url() {
-
         articlesAPI.setTheRequest();
-
     }
 
     @Then("I send the request with {string} to {string}")
@@ -25,23 +23,17 @@ public class SkyStepDefinitions {
     @Then("I get the list of Articles")
     public void i_get_the_list_of_Articles() {
         System.out.println("article 2" + articlesAPI.getListOfArticles());
-
-
         // System.out.println("article 2" + articlesAPI.getListOfArticles().get(0));
-
     }
+
     @Then("I get the single article")
     public void i_get_the_single_article() {
-
         System.out.println("single article 2 = " + articlesAPI.getSingleArticle());
-
     }
 
     @And("status code should be {string}")
     public void statusCodeShouldBe(String expectedStatusCode) {
-
         String actualStatusCode = String.valueOf(articlesAPI.getStatusCode());
-
         Assert.assertEquals("verify status code" ,expectedStatusCode,actualStatusCode);
 
     }

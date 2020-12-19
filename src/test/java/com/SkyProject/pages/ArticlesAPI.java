@@ -14,14 +14,15 @@ import static io.restassured.RestAssured.*;
 
 public class ArticlesAPI {
 
-
     Response response;
+    List<Map<String,Object>> listOfArticles= new ArrayList<>();
 
+    //To reach base URI
     public void setTheRequest(){
         RestAssured.baseURI = ConfigurationReader.get("BaseURI");
-
     }
 
+    //To send HTTP requests
     public void sendTheRequest(String requestType, String endPoint) {
 
         switch (requestType){
@@ -49,16 +50,17 @@ public class ArticlesAPI {
 
     }
 
-    List<Map<String,Object>> listofArticles= new ArrayList<>();
+    //To get a list of article
     public List<Map<String,Object>>getListOfArticles(){
-        listofArticles = response.body().as(List.class);
+        listOfArticles = response.body().as(List.class);
 
         //response.prettyPeek();
         //List<Map<String, Object>> listofArticles = response.jsonPath().getList("");
 
-        return listofArticles;
+        return listOfArticles;
     }
 
+    //To get a single article
     Map<String,Object> singleArticle = new HashMap<>();
     public Map<String,Object> getSingleArticle(){
 
@@ -66,17 +68,20 @@ public class ArticlesAPI {
         return singleArticle;
     }
 
+    //To get the status code
     public int getStatusCode(){
         return response.statusCode();
     }
 
+    //To get the content type
     public String getContentType(){
         return response.getContentType();
     }
 
+    //To check whether the body is empty
     public int getNumberOfArticle(String typeOfList){
         if (typeOfList.equals("list")){
-            return listofArticles.size();
+            return listOfArticles.size();
         }else {
             return singleArticle.size();
 

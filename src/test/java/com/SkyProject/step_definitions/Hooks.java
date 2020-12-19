@@ -11,8 +11,6 @@ public class Hooks {
     public void setUp() {
         //RestAssured.baseURI = ConfigurationReader.get("BaseURI");
 
-
-
     }
 
     @After
